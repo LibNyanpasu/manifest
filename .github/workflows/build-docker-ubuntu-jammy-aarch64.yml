@@ -39,8 +39,8 @@ jobs:
           context: ./docker/ubuntu-22.04/aarch64
           file: ./docker/ubuntu-22.04/aarch64/Dockerfile
           tags: |
-            ghcr.io/${{ github.repository }}:ubuntu-22.04-aarch64-${{ github.sha }}  # commit sha tag
-            ghcr.io/${{ github.repository }}:ubuntu-22.04-aarch64
+            ghcr.io/${{ github.repository_owner }}/builder-ubuntu-22.04-aarch64:${{ github.sha }}
+            ghcr.io/${{ github.repository_owner }}/builder-ubuntu-22.04-aarch64:latest
           push: true
 
       - name: Remove cache after build
