@@ -5,11 +5,11 @@ on:
     branches:
       - main  # 在主分支推送时触发
     paths:
-      - docker/ubuntu-22.04/armhf/**  # 指定路径
+      - docker/debian-trixie/aarch64/**  # 指定路径
   workflow_dispatch:
 jobs:
   build:
-    name: Build and Push ubuntu-22.04-armhf Docker Image
+    name: Build and Push debian-trixie-aarch64 Docker Image
     runs-on: ubuntu-latest
 
     steps:
@@ -37,11 +37,11 @@ jobs:
       - name: Build and Push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: ./docker/ubuntu-22.04/armhf
-          file: ./docker/ubuntu-22.04/armhf/Dockerfile
+          context: ./docker/debian-trixie/aarch64
+          file: ./docker/debian-trixie/aarch64/Dockerfile
           tags: |
-            ghcr.io/${{ github.repository_owner }}/builder-ubuntu-22.04-armhf:${{ github.sha }}
-            ghcr.io/${{ github.repository_owner }}/builder-ubuntu-22.04-armhf:latest
+            ghcr.io/${{ github.repository_owner }}/builder-debian-trixie-aarch64:${{ github.sha }}
+            ghcr.io/${{ github.repository_owner }}/builder-debian-trixie-aarch64:latest
           push: true
 
       - name: Remove cache after build

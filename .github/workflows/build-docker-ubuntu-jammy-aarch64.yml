@@ -9,6 +9,7 @@ on:
   workflow_dispatch:
 jobs:
   build:
+    name: Build and Push ubuntu-22.04-aarch64 Docker Image
     runs-on: ubuntu-latest
 
     steps:

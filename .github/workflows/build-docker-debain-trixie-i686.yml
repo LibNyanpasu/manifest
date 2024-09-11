@@ -9,6 +9,7 @@ on:
   workflow_dispatch:
 jobs:
   build:
+    name: Build and Push debian-trixie-i686 Docker Image
     runs-on: ubuntu-latest
 
     steps:
