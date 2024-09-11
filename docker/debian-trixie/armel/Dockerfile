@@ -55,7 +55,7 @@ RUN dpkg --add-architecture armel && \
 # RUN curl --proto '=https' --tlsv1.2 -sSf https://rsproxy.cn/rustup-init.sh | sh -s -- -y --default-toolchain nightly --profile minimal
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain nightly --profile minimal
 ENV PATH="/root/.cargo/bin:$PATH"
-RUN rustup target add armv7-unknown-linux-gnueabihf
+RUN rustup target add armv7-unknown-linux-gnueabi
 
 # Set envs
 # ENV CARGO_TARGET_AARCH64_UNKNOWN_LINUX_GNU_LINKER=aarch64-linux-gnu-gcc \
