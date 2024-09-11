@@ -26,7 +26,8 @@ RUN apt-get update && \
         pkg-config \
         curl \
         wget \
-        file
+        file \
+        python3.12-minimal
 
 RUN dpkg --add-architecture armel && \
     apt-get update && apt-get install --assume-yes --no-install-recommends -f \
