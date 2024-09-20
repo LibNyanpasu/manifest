@@ -28,6 +28,11 @@ RUN apt-get update && \
     file && \
     rm -rf /var/lib/apt/lists/*
 
+# Install qemu-user-static and register binfmt handlers
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends qemu-user-static binfmt-support && \
+    rm -rf /var/lib/apt/lists/*
+
 RUN dpkg --add-architecture armhf && \
     apt-get update && apt-get install --assume-yes --no-install-recommends -f \
     libwebkit2gtk-4.1-dev:armhf  \
